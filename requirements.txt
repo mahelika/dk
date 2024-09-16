@@ -1,0 +1,9 @@
+streamlit==1.33.0
+anthropic==0.25.1
+clipboard==0.0.4
+SpeechRecognition
+pyttsx3
+python-dotenv
+langchain
+langchain-community
+chromadb
