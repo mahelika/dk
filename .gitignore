@@ -3,3 +3,4 @@ newenv/
 *.env
 logo.png
 chroma/
+secrets.toml
