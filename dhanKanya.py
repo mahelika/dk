@@ -8,16 +8,16 @@ from speech_recognition import Recognizer, AudioFile
 import pyttsx3
 import re 
 
-# Remove dotenv and os imports since you're using Streamlit's secrets
-# from dotenv import load_dotenv
-# import os
-
 # Retrieve the API key from Streamlit secrets
 ANTHROPIC_API_KEY = st.secrets["ANTHROPIC_API_KEY"]
 if not ANTHROPIC_API_KEY:
     raise ValueError("Anthropic API Key is missing! Please set it in Streamlit secrets.")
-else: 
-    print(f"Loaded API Key: {ANTHROPIC_API_KEY}")
+
+# Initialize Anthropic client with the API key
+client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+
+# ... (rest of your code)
+
 
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
@@ -25,8 +25,7 @@ from langchain_community.vectorstores import Chroma
 
 CHROMA_PATH = "chroma"
 
-# Initialize Anthropic client with the API key
-client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+
 
 
 
